@@ -1,0 +1,20 @@
+VASIR.NET 
+=========================================
+This is just a basic django application for my vasir.net website.
+
+The server uses nginx and routes requests to apache (for non static content),
+but any server configuration should work fine.
+
+Included Apps
+=========================================
+vasir_blog: Application that handles the blog
+vasir_site: Application that handles all other pages
+
+Dependancies (Required)
+=========================================
+
+Dependancies (Optional)
+=========================================
+-memcached 
+
+
