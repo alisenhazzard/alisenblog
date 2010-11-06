@@ -1,0 +1,258 @@
+/* ========================================================================    
+ *
+ * main.css
+ * ------------
+ *
+ * Main CSS style file, applied to all pages
+ *
+ * ======================================================================== */
+/* ========================================================================    
+ *
+ *  DEFAULT OVERRIDES
+ *
+ * ======================================================================== */
+body, html {
+    bottom:0;
+    background:#f0f0f0 url(../img/content_bg.png);
+    color: #2C2D32;
+    font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+    font-weight:normal;
+    left:0;
+    margin:0;
+    padding:0;
+    position:absolute;
+    overflow:hidden;
+    right:0;
+    text-shadow: 0 1px 0 #ffffff;
+    top:0;
+
+    -webkit-font-smoothing: antialiased;
+}   
+
+a {
+    color:#7291AD;
+    padding:5px;
+} 
+a:hover {
+    color:#A28167;
+}
+
+/* --------------------------------------
+ * Headers 
+ * -------------------------------------- */
+h1,h2,h3,h4,h5,h6 {
+    font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    font-size: 4.7em;
+    font-weight:normal;
+    text-shadow:0 2px 2px #ffffff;
+}
+h2 {
+    color:#7291AD;
+    font-size:2em;
+    margin:0 0 .5% 0;
+}
+
+/* --------------------------------------
+ * Lists 
+ * -------------------------------------- */
+ul, li {
+}
+
+
+/* --------------------------------------
+ * Divs 
+ * -------------------------------------- */
+div {
+    text-overflow: ellipsis;
+}
+
+/* ========================================================================    
+ *
+ *                              LAYOUT
+ *
+ * ======================================================================== */
+/* ========================================================================
+ *
+ * SITE WRAPPER AND TREE DIV
+ *
+ * ======================================================================== */
+#site_wrapper {
+    bottom:0;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:9999;
+}
+
+/* ========================================================================    
+ *
+ * HEADER 
+ *
+ * ======================================================================== */
+#header_wrapper {
+    -moz-box-shadow: 0 2px 5px #909090;
+    -webkit-box-shadow: 0 2px 9px #181818;
+    box-shadow: 0 2px 5px #909090;
+
+    background:#e7e7e7 url(../img/header_bg.png);
+    border-bottom:1px solid #324D62;
+    height: 120px;
+    position:relative;
+    z-index:700;
+}
+    #header {
+        height:100%;
+        position:relative;
+        width:100%;
+    }
+
+    /* --------------------------------------
+     * Header Logo 
+     * -------------------------------------- */
+    #header #logo {
+        border-bottom:1px solid rgba(225,225,225,.5);
+        _border-bottom:1px solid #e7e7e7;
+        bottom:38%;
+        left:0;
+        font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+        position:absolute;
+        right:0;
+        top:0;
+    }
+        #header #logo h1 {
+            color:#e7e7e7;
+            text-shadow: 0 2px 2px #404040;
+        }
+        #header #logo h1 a {
+            color:inherit;
+            text-decoration:inherit;
+        }
+            #header #logo h1 a:hover {
+                background: rgba(255,255,255,.1);
+            }
+
+    /* --------------------------------------
+     * Site Navigation 
+     * -------------------------------------- */
+    #site_nav_wrapper {
+        bottom:0;
+        left:0;
+        position:absolute;
+        right:0;
+        top:0;
+    }
+        #site_nav {
+            bottom:0;
+            left:0;
+            position:absolute;
+            right:0;
+        }
+        #site_nav ul, #site_nav li {
+            list-style: none;
+        }
+        #site_nav ul li {
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            border-radius:5px;
+
+            float:right;
+            font-size:2em;
+            font-weight:bold;
+            margin:0 0 0 5%;
+            position:relative;
+        }
+            #site_nav ul li a {
+                color:#efefef;
+                display:block;
+                letter-spacing:.1em;
+                padding:5% 0 1% 15%;
+                text-decoration:none;
+                text-shadow:0 2px 1px #2C2D32;
+            }
+                
+                #site_nav ul li a:hover {
+                    text-shadow:0 0px 8px #cdcdcd;
+                }
+            #site_nav .active_link {
+                text-shadow:0 0px 8px #cdcdcd;
+            }
+
+/* ========================================================================    
+ *
+ * CONTENT 
+ *
+ * ======================================================================== */
+#content_wrapper {
+    left:0;
+    margin:1% 1% 5% 1%;
+    position:relative;
+    z-index:200;
+}
+    #content {
+        position:relative;
+    }
+
+/* ========================================================================    
+ *
+ * FOOTER 
+ *
+ * ======================================================================== */
+#footer_wrapper {
+    height:100px;
+    position:relative;
+    z-index:400;
+}
+    #footer_wrapper a {
+        color:#9CB9D5;
+    }
+        #footer_wrapper a:hover {
+            color:#A28167;
+        }
+
+    #footer {
+        bottom:0;
+        left:25%;
+        position:absolute;
+        right:1%;
+        top:0;
+    }
+    #footer_left_wrapper {
+        bottom:0;
+        left:0;
+        position:absolute;
+        right:50%;
+        text-align:left;
+        top:0;
+    }
+
+    #footer_right_wrapper {
+        bottom:0;
+        left:50%;
+        position:absolute;
+        right:0;
+        text-align:right;
+        top:0;
+    }
+
+/* ========================================================================    
+ *
+ * REUSABLE CLASSES 
+ *
+ * ======================================================================== */
+.clear {
+    clear:both;
+}
+
+.align_right {
+    text-align:right;
+}
+.email {
+    unicode-bidi: bidi-override;
+    direction:rtl;
+}

@@ -1,0 +1,19 @@
+{% extends 'vasir_site/base.html' %}
+
+{% block site_content %}
+{% if filter_type %}
+    <h1>{{filter_type}}:{{filter_value}} - {{posts|length}} posts</h1>
+{% endif %}
+<hr />
+{% for post in posts%}
+    <h2>
+        <a href='/blog/{{post.category.slug}}/{{post.slug}}/'
+            title='{{post.title}}'>
+            {{post.title}}
+        </a>
+    </h2>
+    <hr />
+    {{post.description}}
+{% endfor %}
+
+{% endblock site_content %}

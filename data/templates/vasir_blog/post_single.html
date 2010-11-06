@@ -1,0 +1,10 @@
+{% extends 'vasir_site/base.html' %}
+
+{% block site_content %}
+<h1>{{post.title}}</h1>
+<hr />
+posted on {{post.post_date}}
+<hr />
+{{post.content|safe}}
+
+{% endblock site_content %}
