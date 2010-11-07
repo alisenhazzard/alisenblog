@@ -1,0 +1,51 @@
+{% extends 'vasir_site/base.html' %}
+
+{% block site_content %}
+<div id='blog_left_side'>
+    {% block content_left %}
+
+    {% endblock content_left %}
+</div>
+<div id='blog_right_side'>
+    {% block content_right %}
+        <!-- About block -->
+        <div class='blog_right_side_block'>
+            <h3>About</h3>
+            My name is Erik Hazzard.  I'm a full time web developer and part time game developer.  
+            Follow me on <a href='http://twitter.com/enoex/' 
+                title='Enoex twitter profile'>twitter</a>
+
+        </div>
+
+        <!-- Blog categories -->
+        <div class='blog_right_side_block'>
+            <h3>Categories</h3>
+                <a href='/blog/' title='All Categories'>
+                    All Categories
+                </a><br />
+            {% for category in all_categories %}
+                <a href='/blog/{{category.slug}}/'
+                    title='{{category.description}}'>
+                    {{category.name}}
+                </a><br />
+            {% endfor %}
+        </div>
+
+        <!-- Latest posts -->
+        <div class='blog_right_side_block'>
+            <h3>Latest Posts</h3>
+            {% for post in latest_posts %}
+                <a href='/blog/{{post.category.slug}}/{{post.slug}}/'
+                    title='{{post.description}}'>
+                    {{post.title}}
+                </a><br />
+            {% endfor %}
+        </div>
+    {% endblock content_right %}
+</div>
+<div class='clear'></div>
+    <!-- Disqus comment area -->
+    {% block comments %}
+
+    {% endblock %}
+{% endblock site_content %}

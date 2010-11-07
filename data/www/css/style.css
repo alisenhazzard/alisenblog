@@ -15,7 +15,7 @@ body, html {
     bottom:0;
     background:#f0f0f0 url(../img/content_bg.png);
     color: #2C2D32;
-    font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+    font-family:Arial, Verdana, sans-serif; 
     font-weight:normal;
     left:0;
     margin:0;
@@ -31,7 +31,9 @@ body, html {
 
 a {
     color:#7291AD;
+    font-weight:bold;
     padding:5px;
+    text-decoration:none;
 } 
 a:hover {
     color:#A28167;
@@ -41,14 +43,14 @@ a:hover {
  * Headers 
  * -------------------------------------- */
 h1,h2,h3,h4,h5,h6 {
-    font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
+    font-family:Arial, Verdana, sans-serif; 
     margin:0;
     padding:0;
 }
 
 h1 {
-    font-size: 4.7em;
-    font-weight:normal;
+    font-size: 2em;
+    font-weight:bold;
     text-shadow:0 2px 2px #ffffff;
 }
 h2 {
@@ -102,7 +104,8 @@ div {
 
     background:#e7e7e7 url(../img/header_bg.png);
     border-bottom:1px solid #324D62;
-    height: 120px;
+    height: 80px;
+    padding:0 2%;
     position:relative;
     z-index:700;
 }
@@ -116,21 +119,16 @@ div {
      * Header Logo 
      * -------------------------------------- */
     #header #logo {
-        border-bottom:1px solid rgba(225,225,225,.5);
-        _border-bottom:1px solid #e7e7e7;
-        bottom:38%;
-        left:0;
-        font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; 
-        position:absolute;
-        right:0;
-        top:0;
+        z-index:1337;
     }
         #header #logo h1 {
             color:#e7e7e7;
+            font-size: 4.7em;
             text-shadow: 0 2px 2px #404040;
         }
         #header #logo h1 a {
             color:inherit;
+            height:100%;
             text-decoration:inherit;
         }
             #header #logo h1 a:hover {
@@ -142,7 +140,7 @@ div {
      * -------------------------------------- */
     #site_nav_wrapper {
         bottom:0;
-        left:0;
+        left:200px;
         position:absolute;
         right:0;
         top:0;
@@ -190,7 +188,8 @@ div {
  * ======================================================================== */
 #content_wrapper {
     left:0;
-    margin:1% 1% 5% 1%;
+    margin:2% 1% 5% 1%;
+    padding:0 2%;
     position:relative;
     z-index:200;
 }
@@ -198,14 +197,57 @@ div {
         position:relative;
     }
 
+    /* ========================================================================    
+     *
+     * BLOG STYLE 
+     *
+     * ======================================================================== */
+    #blog_left_side {
+        float:left;
+        margin:0 1% 0 0;
+        position:relative;
+        width:69%;
+    }
+    #blog_right_side {
+        float:left;
+        position:relative;
+        width:29%;
+    }
+
+        .blog_right_side_block {
+            color:#a9a9a9;
+            margin:0 0 5% 0;
+        }
+            .blog_right_side_block h3 {
+                color: #2C2D32;
+            }
+
+    /* ========================================================================    
+     * Single posts
+     * ======================================================================== */
+        .post_submission_info {
+            font-style:italic;
+            text-align:right;
+        }
+
+    /* ========================================================================    
+     * Multiple Posts
+     * ======================================================================== */
+        .blog_post_item {
+            margin:0 0 5% 0;
+        }
+
 /* ========================================================================    
  *
  * FOOTER 
  *
  * ======================================================================== */
 #footer_wrapper {
+    color: #aeaeae;
     height:100px;
+    padding:0 2%;
     position:relative;
+    text-shadow: 1px 1px 0 #ffffff;
     z-index:400;
 }
     #footer_wrapper a {
@@ -216,28 +258,11 @@ div {
         }
 
     #footer {
-        bottom:0;
-        left:25%;
-        position:absolute;
-        right:1%;
-        top:0;
-    }
-    #footer_left_wrapper {
-        bottom:0;
-        left:0;
-        position:absolute;
-        right:50%;
-        text-align:left;
-        top:0;
-    }
-
-    #footer_right_wrapper {
-        bottom:0;
-        left:50%;
-        position:absolute;
-        right:0;
-        text-align:right;
-        top:0;
+        border-top:1px solid rgba(220,220,220,.8);
+        _border-top:1px solid #cdcdcd;
+        padding:2% 0;
+        position:relative;
+        text-align:center;
     }
 
 /* ========================================================================    
