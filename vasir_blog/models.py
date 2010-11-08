@@ -7,7 +7,7 @@ Contains all our models for the blog app
 from django.db import models
 from django.conf import settings
 
-#from django.contrib import admin
+from django.contrib import admin
 """=============================================================================
 
 Models

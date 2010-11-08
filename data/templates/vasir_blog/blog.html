@@ -2,9 +2,13 @@
 
 {% block content_left %}
 {% if filter_type %}
-    <h1>{{filter_type}}:{{filter_value}} - {{posts|length}} posts</h1>
-    <hr />
+    <div class='filter_type_info'>
+        <h1>
+            {{filter_value|capfirst}} : {{posts|length}} posts</h1>
+        </h1>
+    </div>
 {% endif %}
+
 {% for post in posts%}
 <div class='blog_post_item'>
     <h2>
@@ -14,7 +18,15 @@
         </a>
     </h2>
     <hr />
-    {{post.description}}
+    <div class='blog_post_item_description'>
+        {{post.description}}
+    </div>
+    <div class='blog_post_read_more'>
+        <a href='/blog/{{post.category.slug}}/{{post.slug}}/'
+            title='{{post.title}}' rel='nofollow'>
+            Read More
+        </a>
+    </div>
 </div>
 {% endfor %}
 

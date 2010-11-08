@@ -1,21 +1,23 @@
 {% extends 'vasir_blog/blog_base.html' %}
 
 {% block content_left %}
-    <h1>{{post.title}}</h1>
-    <hr />
-    <div class='post_submission_info'>
+<div class='post_single_wrapper'>
+    <div class='post_single_title'>
+        <h1>{{post.title}}</h1>
+    </div>
+    <div class='grey_text post_submission_info'>
         Posted in 
         <a href='/blog/{{post.category.slug}}'
             title='{{post.category.name}}'>
             {{post.category.name}}</a>
         on {{post.post_date}}
     </div>
-    <hr />
     <!-- POST CONTENT -->
-    {{post.content|safe}}
-    <hr />
+    <div class='post_single_content'>
+        {{post.content|safe}}
+    </div>
     <!-- POST CONTENT END -->
-
+</div>
 {% endblock content_left %}
 
 {% block comments %}
