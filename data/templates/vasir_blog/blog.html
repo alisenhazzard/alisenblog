@@ -9,7 +9,7 @@
     </div>
 {% endif %}
 
-{% for post in posts%}
+{% for post in posts %}
 <div class='blog_post_item'>
     <h2>
         <a href='/blog/{{post.category.slug}}/{{post.slug}}/'
@@ -17,17 +17,36 @@
             {{post.title}}
         </a>
     </h2>
-    <hr />
     <div class='blog_post_item_description'>
         {{post.description}}
     </div>
-    <div class='blog_post_read_more'>
+    <div class='blog_post_read_more grey_text'>
+        Posted on {{post.post_date}} | 
         <a href='/blog/{{post.category.slug}}/{{post.slug}}/'
             title='{{post.title}}' rel='nofollow'>
-            Read More
+            Read More &gt;
         </a>
     </div>
 </div>
 {% endfor %}
 
+<div class='pagination_wrapper'>
+    {% if total_pages > 0 %}
+        Page {{current_page}} of {{total_pages}}<br />
+
+        {% if previous_page %}
+        <a href='/blog/page/{{previous_page}}/' title='Previous Page'>
+            &lt; Previous Page 
+        </a>
+        {% endif %}
+        {% if previous_page and next_page %}
+            |
+        {% endif %}
+        {% if next_page %}
+        <a href='/blog/page/{{next_page}}/' title='Next Page'>
+            Next Page &gt;
+        </a>
+        {% endif %}
+    {% endif %}
+</div>
 {% endblock content_left %}

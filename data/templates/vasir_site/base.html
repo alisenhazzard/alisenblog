@@ -15,8 +15,7 @@
 
         <!-- Google Fonts -->
         <link rel='stylesheet' 
-            href='http://fonts.googleapis.com/css?family=IM+Fell+English&subset=latin|Neuton:regular|Inconsolata' />
-
+            href='http://fonts.googleapis.com/css?family=IM+Fell+English|Inconsolata|Cantarell|Reenie+Beanie' />
         <!-- IPAD Style (Portrait) -->
         <!--<link rel='stylesheet' media="only screen and (orientation:portrait)" 
             href='/static/vasir/css/portrait.css' />-->
@@ -45,24 +44,39 @@
                 <div id='site_nav'>
                     <ul>
                         <li>
-                            <a href='/' rel='nofollow' 
-                                title='Home'>Home</a>
-                        </li>
-                        <li>
-                            <a href='/about/' rel='nofollow' 
-                                title='About'>About</a>
+                            <a href='/blog/' rel='nofollow' 
+                                {% if '/blog/' in request.path %}
+                                    class='active_link'
+                                {% endif %}
+                                title='Blog'>Blog</a>
                         </li>
                         <li>
                             <a href='/dev/' rel='nofollow' 
+                                {% if '/dev/' in request.path %}
+                                    class='active_link'
+                                {% endif %}
                                 title='Dev'>Dev</a>
                         </li>
                         <li>
-                            <a href='/portolfio/' rel='nofollow' 
+                            <a href='/portfolio/' rel='nofollow' 
+                                {% if '/portfolio/' in request.path %}
+                                    class='active_link'
+                                {% endif %}
                                 title='Portfolio'>Portfolio</a>
                         </li>
                         <li>
-                            <a href='/blog/' rel='nofollow' 
-                                title='Blog'>Blog</a>
+                            <a href='/about/' rel='nofollow' 
+                                {% if '/about/' in request.path %}
+                                    class='active_link'
+                                {% endif %}
+                                title='About'>About</a>
+                        </li>
+                        <li>
+                            <a href='/' rel='nofollow' 
+                                {% ifequal request.path '/' %}
+                                    class='active_link'
+                                {% endifequal %}
+                                title='Home'>Home</a>
                         </li>
                     </ul>
                     <div class='clear'></div>

@@ -33,6 +33,9 @@ class Category(models.Model):
     #------------------------------------
     #Category functions
     #------------------------------------
+    def get_post_count(self):
+        #Return the URL as category/post
+        return self.post_set.count()
     def get_url(self):
         #Return the URL as category/post
         return '/blog/%s/' % (

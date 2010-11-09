@@ -47,8 +47,8 @@ def blog(request, **kwargs):
         if kwargs['posts_per_page']:
             kwargs['posts_per_page'] = int(kwargs['posts_per_page'])
     except KeyError:
-        #If none is passed in, use 10
-        kwargs['posts_per_page'] = 10
+        #If none is passed in, use 5
+        kwargs['posts_per_page'] = 5
 
     #Get current page
     try:
@@ -136,6 +136,17 @@ def blog(request, **kwargs):
         ]
 
     #------------------------------------
+    #More Pagination Stuff
+    #------------------------------------
+    previous_page = None
+    if kwargs['current_page'] > 1:
+        previous_page = kwargs['current_page'] - 1
+
+    next_page= None
+    if kwargs['current_page'] < total_pages: 
+        next_page = kwargs['current_page'] + 1
+
+    #------------------------------------
     #
     #Data to get for all pages
     #
@@ -158,8 +169,11 @@ def blog(request, **kwargs):
 
         'current_page': kwargs['current_page'],
         'posts_per_page': kwargs['posts_per_page'],
-        'total_posts': total_posts,
-        'total_pages': total_pages,
+        'total_posts': int(total_posts),
+        'total_pages': int(total_pages),
+
+        'previous_page': previous_page,
+        'next_page': next_page,
     }
 
 

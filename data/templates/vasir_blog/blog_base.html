@@ -25,6 +25,9 @@
                     <a href='/blog/' title='All Categories'>
                         All Categories
                     </a>
+                    <span class='total_post_count'>
+                        (<strong>{{total_posts}}</strong>)
+                    </span>
                 </li>
             {% for category in all_categories %}
                 <li>
@@ -32,6 +35,9 @@
                         title='{{category.description}}'>
                         {{category.name}}
                     </a>
+                    <span class='total_post_count'>
+                        (<strong>{{category.get_post_count}}</strong>)
+                    </span>
                 </li>
             {% endfor %}
             </ul>
@@ -49,8 +55,22 @@
                     </a>
                 </li>
             {% endfor %}
-        </ul>
+            </ul>
         </div>
+        
+        <!-- Tutorials -->
+        <div class='blog_right_side_block'>
+            <h3>Tutorials</h3>
+            <ul>
+                <li>
+                    <a href='/blog/tags/openlayers_tutorials/'
+                        title='Tutorial covering OpenLayers'>
+                        OpenLayers Tutorial
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     {% endblock content_right %}
 </div>
 <div class='clear'></div>

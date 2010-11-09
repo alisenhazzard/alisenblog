@@ -28,7 +28,7 @@ from django.conf import settings
 
 #vasir_site app imports
 #========================================
-import models
+import vasir_blog.models as blog_models
 
 """==========================================================================
 
