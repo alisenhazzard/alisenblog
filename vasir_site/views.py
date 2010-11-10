@@ -18,7 +18,6 @@ home: renders the home page
 def home(request):
     #Get the latest post
     latest_post = blog_models.Post.objects.order_by('-post_date')[0]
-    print request
     return {
         'latest_post': latest_post
     }

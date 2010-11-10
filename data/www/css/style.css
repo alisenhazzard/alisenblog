@@ -466,6 +466,7 @@ div {
  * ======================================================================== */
 #footer_wrapper {
     color: #aeaeae;
+    font-style:italic;
     height:100px;
     padding:0 2%;
     position:relative;
