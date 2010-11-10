@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     #Get posts by category
     url(r'^(?P<filter_value>[^/]+)/$',
         'vasir_blog.views.blog',
-        {'model': models.Category,
+        {
         'filter_type': 'category',
         'filter_col': 'slug',
         }),
@@ -40,10 +40,11 @@ urlpatterns = patterns('',
     #   TAGS
     #===========================================================================
     #Get a list of blog posts by tag
-    url(r'^tags/(?P<filter_value>[^/]+)/$',
+    url(r'^by/tag/(?P<filter_value>[^/]+)/$',
         'vasir_blog.views.blog',
-        {'model': models.Tag,
-        'filter_type': 'tag',
+        {
+        'query_type': 'tag',
+        'filter_type': 'tags',
         'filter_col': 'slug',
         }),
 )

@@ -7,7 +7,6 @@ Contains all our models for the blog app
 from django.db import models
 from django.conf import settings
 
-from django.contrib import admin
 """=============================================================================
 
 Models
@@ -138,11 +137,3 @@ class Post(models.Model):
 
     def __unicode__(self):
         return '%s (%s)' % (self.title, self.slug)
-
-
-#Register mode
-#admin.site.register(Category)
-#Register model
-#admin.site.register(Tag)
-#Register model
-#admin.site.register(Post)

@@ -32,20 +32,24 @@
 
 <div class='pagination_wrapper'>
     {% if total_pages > 0 %}
-        Page {{current_page}} of {{total_pages}}<br />
-
         {% if previous_page %}
-        <a href='/blog/page/{{previous_page}}/' title='Previous Page'>
-            &lt; Previous Page 
-        </a>
+        <div class='pagination_prev_page'>
+            <a href='/blog/page/{{previous_page}}/' title='Previous Page'>
+                &lt; Previous Page 
+            </a>
+        </div>
         {% endif %}
-        {% if previous_page and next_page %}
-            |
-        {% endif %}
+
+        <div class='pagiation_cur_page'>
+            Page {{current_page}} of {{total_pages}}<br />
+        </div>
+
         {% if next_page %}
-        <a href='/blog/page/{{next_page}}/' title='Next Page'>
-            Next Page &gt;
-        </a>
+        <div class='pagination_next_page'>
+            <a href='/blog/page/{{next_page}}/' title='Next Page'>
+                Next Page &gt;
+            </a>
+        </div>
         {% endif %}
     {% endif %}
 </div>

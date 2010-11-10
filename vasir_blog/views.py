@@ -5,15 +5,12 @@ Handles various page renders
 ============================================================================="""
 #Import everything from the views_util
 from vasir_site.views_util import *
-#Import models
-import models
+#Import blog_models
+#import blog_models
 
 #python imports
 #----------------------------------------
 import math
-
-#Import admin to register models
-from django.contrib import admin
 """=============================================================================
 
 Functions
@@ -102,20 +99,20 @@ def blog(request, **kwargs):
             kwargs['filter_col']): 
                 kwargs['filter_value']
         }
-
+        
         #Grab the posts that match the filter
         #   (e.g., get posts that belong to a passed in category)
         #unpack the filter dict we just created above so we can use
         #   variable column names
-        total_posts = models.Post.objects.filter(
+        total_posts = blog_models.Post.objects.filter(
             **filter_dict).count()
-        
+
         #Get the total number of pages
         total_pages = math.ceil(
             float(total_posts) / kwargs['posts_per_page'])
     
         #Get the posts
-        posts = models.Post.objects.filter(
+        posts = blog_models.Post.objects.filter(
             **filter_dict)[
             ((kwargs['current_page'] - 1) * kwargs['posts_per_page']):
             (kwargs['current_page'] * kwargs['posts_per_page'])
@@ -123,14 +120,14 @@ def blog(request, **kwargs):
 
     elif kwargs['filter_type'] is None:
         #Get the number of posts
-        total_posts = models.Post.objects.count()
+        total_posts = blog_models.Post.objects.count()
 
         #Get the total number of pages
         total_pages = math.ceil(
             float(total_posts) / kwargs['posts_per_page'])
     
         #Get the posts
-        posts = models.Post.objects.all()[
+        posts = blog_models.Post.objects.all()[
             ((kwargs['current_page'] - 1) * kwargs['posts_per_page']):
             (kwargs['current_page'] * kwargs['posts_per_page'])
         ]
@@ -165,10 +162,13 @@ def blog(request, **kwargs):
         'posts': posts,
 
         'filter_type': kwargs['filter_type'],
-        'filter_value': kwargs['filter_value'],
+        #Clean up filter_value
+        'filter_value': kwargs['filter_value'].replace('_', ' '),
 
         'current_page': kwargs['current_page'],
         'posts_per_page': kwargs['posts_per_page'],
+
+        #Turn posts and pages to ints
         'total_posts': int(total_posts),
         'total_pages': int(total_pages),
 
@@ -182,14 +182,14 @@ def blog(request, **kwargs):
 #Get the latest posts to show across all parts of the blog
 #----------------------------------------
 def get_latest_posts():
-    latest_posts = models.Post.objects.order_by('-post_date')[:5]
+    latest_posts = blog_models.Post.objects.order_by('-post_date')[:5]
     return latest_posts
 
 #----------------------------------------
 #Get all the categories
 #----------------------------------------
 def get_all_categories():
-    all_categories = models.Category.objects.all().order_by('name')
+    all_categories = blog_models.Category.objects.all().order_by('name')
     return all_categories
 
 
@@ -199,7 +199,7 @@ def get_all_categories():
 @render_to('vasir_blog/post_single.html')
 def get_single_post(request, kwargs):
     #Get single post 
-    post_object = models.Post.objects.get(
+    post_object = blog_models.Post.objects.get(
         slug=kwargs['filter_value'])
    
     #We need to get the 5 latest posts for the sidebas
@@ -213,15 +213,3 @@ def get_single_post(request, kwargs):
         'all_categories': all_categories,
         'post': post_object,
     }
-
-"""=============================================================================
-
-Admin site registration
-
-============================================================================="""
-#Register mode
-admin.site.register(models.Category)
-#Register model
-admin.site.register(models.Tag)
-#Register model
-admin.site.register(models.Post)
