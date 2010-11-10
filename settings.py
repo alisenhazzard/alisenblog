@@ -63,6 +63,11 @@ try:
 except AttributeError:
     FORCE_SQLITE = False
 
+try:
+    FORCE_POSTGRES = settings_config.FORCE_POSTGRES
+except AttributeError:
+    FORCE_POSTGRES = False
+
 #Use local sqlite db if in dev, otherwise use postgres
 if SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True:
     DATABASES = {
@@ -75,7 +80,7 @@ if SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True:
             'PORT': '',
         }
     }
-elif SITE_ENVIRONMENT == 'production':
+elif SITE_ENVIRONMENT == 'production' or FORCE_POSTGRES is True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.psycopg2',
