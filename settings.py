@@ -85,7 +85,7 @@ elif SITE_ENVIRONMENT == 'production' or FORCE_POSTGRES is True:
         'default': {
             'ENGINE': 'django.db.backends.psycopg2',
             'NAME': 'vasir',
-            'USER': 'vasir',
+            'USER': 'postgres',
             'PASSWORD': settings_config.PRODUCTION_PASSWORD,
             'HOST': 'localhost',
             'PORT': '',
