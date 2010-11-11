@@ -10,6 +10,7 @@ import re
 import datetime
 import random
 import json
+import hashlib
 
 #django imports
 #========================================

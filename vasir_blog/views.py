@@ -22,6 +22,17 @@ def blog(request, **kwargs):
     -------------------------------------
     Handles grabbing blog posts by date / category / tag '''
     #------------------------------------
+    #Check for cache key first
+    #------------------------------------
+    #blog_request_key = 'blog_%s' % (
+    #    hashlib.sha224(request.GET.__str__()).hexdigest()        
+    #)
+
+    #blog_cached_response = cache.get(blog_request_key)
+
+    #if blog_cached_response is not None:
+    #    return HttpResponse(blog_cached_response)
+    #------------------------------------
     #
     #Data to get based on request
     #
@@ -107,6 +118,9 @@ def blog(request, **kwargs):
         total_posts = blog_models.Post.objects.filter(
             **filter_dict).count()
 
+        #Save the total number of posts in all categories
+        all_total_posts = blog_models.Post.objects.count()
+
         #Get the total number of pages
         total_pages = math.ceil(
             float(total_posts) / kwargs['posts_per_page'])
@@ -121,6 +135,8 @@ def blog(request, **kwargs):
     elif kwargs['filter_type'] is None:
         #Get the number of posts
         total_posts = blog_models.Post.objects.count()
+        #The total_posts is the same as all_total_post here
+        all_total_posts = total_posts 
 
         #Get the total number of pages
         total_pages = math.ceil(
@@ -172,6 +188,9 @@ def blog(request, **kwargs):
         'total_posts': int(total_posts),
         'total_pages': int(total_pages),
 
+        #Total number of posts in all categories 
+        'all_total_posts': int(all_total_posts),
+
         'previous_page': previous_page,
         'next_page': next_page,
     }
@@ -205,6 +224,9 @@ def get_single_post(request, kwargs):
     #We need to get the 5 latest posts for the sidebas
     latest_posts = get_latest_posts()
 
+    #Save the total number of posts in all categories
+    all_total_posts = blog_models.Post.objects.count()
+
     #Get all the categories
     all_categories = get_all_categories()
 
@@ -212,4 +234,5 @@ def get_single_post(request, kwargs):
         'latest_posts': latest_posts,
         'all_categories': all_categories,
         'post': post_object,
+        'all_total_posts': all_total_posts,
     }

@@ -48,7 +48,7 @@ elif SITE_ENVIRONMENT == 'production' or FORCE_MEMCACHED is True:
 try:
     CACHE_MIDDLEWARE_SECONDS = settings_config.CACHE_MIDDLEWARE_SECONDS 
 except AttributeError:
-    CACHE_MIDDLEWARE_SECONDS = 60 * 15
+    CACHE_MIDDLEWARE_SECONDS = 60 * 35
 
 CACHE_MIDDLEWARE_KEY_PREFIX = 'vasir'
 
@@ -69,7 +69,7 @@ except AttributeError:
     FORCE_POSTGRES = False
 
 #Use local sqlite db if in dev, otherwise use postgres
-if SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True:
+if (SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True) and (FORCE_POSTGRES is False):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
