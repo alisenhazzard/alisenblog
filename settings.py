@@ -83,7 +83,7 @@ if SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True:
 elif SITE_ENVIRONMENT == 'production' or FORCE_POSTGRES is True:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.psycopg2',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'vasir',
             'USER': 'postgres',
             'PASSWORD': settings_config.PRODUCTION_PASSWORD,
