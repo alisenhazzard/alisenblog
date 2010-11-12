@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
-    (r'^blog/', include('vasirsite.vasir_blog.urls')),
+    (r'^blog[/]', include('vasirsite.vasir_blog.urls')),
     (r'^', include('vasirsite.vasir_site.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 

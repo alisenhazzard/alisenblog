@@ -1,4 +1,6 @@
 from django.conf.urls.defaults import *
+#from django.http import HttpResponseRedirect
+#redirect_to
 import models
 
 urlpatterns = patterns('',
@@ -18,8 +20,12 @@ urlpatterns = patterns('',
         'vasir_blog.views.blog',
         ),
 
+    #url(r'^page/(?P<current_page>\d{1,3})$',
+    #    HttpResponseRedirect('/blog/page/(?P<current_page>\d{1,3})/')
+    #    ),
+
     #Get a single blog post
-    url(r'^(?P<category>[^/]+)/(?P<filter_value>[^/]+)/$',
+    url(r'^(?P<category>[^/]+)/(?P<filter_value>[^/]+)[/]$',
         'vasir_blog.views.blog',
         {
         'query_type': 'single',
@@ -29,7 +35,7 @@ urlpatterns = patterns('',
     #   CATEGORIES 
     #===========================================================================
     #Get posts by category
-    url(r'^(?P<filter_value>[^/]+)/$',
+    url(r'^(?P<filter_value>[^/]+)[/]$',
         'vasir_blog.views.blog',
         {
         'filter_type': 'category',
@@ -40,7 +46,7 @@ urlpatterns = patterns('',
     #   TAGS
     #===========================================================================
     #Get a list of blog posts by tag
-    url(r'^by/tag/(?P<filter_value>[^/]+)/$',
+    url(r'^by/tag/(?P<filter_value>[^/]+)[/]$',
         'vasir_blog.views.blog',
         {
         'query_type': 'tag',

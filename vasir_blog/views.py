@@ -11,6 +11,8 @@ from vasir_site.views_util import *
 #python imports
 #----------------------------------------
 import math
+
+from django import http
 """=============================================================================
 
 Functions
@@ -127,7 +129,7 @@ def blog(request, **kwargs):
     
         #Get the posts
         posts = blog_models.Post.objects.filter(
-            **filter_dict)[
+            **filter_dict).order_by('-post_date')[
             ((kwargs['current_page'] - 1) * kwargs['posts_per_page']):
             (kwargs['current_page'] * kwargs['posts_per_page'])
         ]
@@ -143,7 +145,8 @@ def blog(request, **kwargs):
             float(total_posts) / kwargs['posts_per_page'])
     
         #Get the posts
-        posts = blog_models.Post.objects.all()[
+        posts = blog_models.Post.objects.all().order_by(
+            '-post_date')[
             ((kwargs['current_page'] - 1) * kwargs['posts_per_page']):
             (kwargs['current_page'] * kwargs['posts_per_page'])
         ]
@@ -193,6 +196,8 @@ def blog(request, **kwargs):
 
         'previous_page': previous_page,
         'next_page': next_page,
+
+        'host': http.get_host(request),
     }
 
 

@@ -19,8 +19,8 @@ ENVIRONMENT_TYPES = ['dev', 'production']
 SITE_ENVIRONMENT = settings_config.SITE_ENVIRONMENT
 
 #Double check that debug is always false if in production
-if SITE_ENVIRONMENT == ENVIRONMENT_TYPES[1]:
-    DEBUG = False
+#if SITE_ENVIRONMENT == ENVIRONMENT_TYPES[1]:
+#    DEBUG = False
 
 #Path Of vasir folder
 #------------
@@ -36,11 +36,17 @@ except AttributeError:
     Cache Settings
 -----------------------------------------------------------------------------"""
 try:
-    FORCE_MEMCACHED = settings.FORCE_MEMCACHED
+    FORCE_DUMMY_CACHE = settings_config.FORCE_DUMMY_CACHE
+except:
+    FORCE_DUMMY_CACHE = False
+
+try:
+    FORCE_MEMCACHED = settings_config.FORCE_MEMCACHED
 except:
     FORCE_MEMCACHED = False
 
-if SITE_ENVIRONMENT == 'dev' and FORCE_MEMCACHED is False:
+if (SITE_ENVIRONMENT == 'dev' and FORCE_MEMCACHED is False) \
+    or (FORCE_DUMMY_CACHE is True):
     CACHE_BACKEND = 'dummy://'
 elif SITE_ENVIRONMENT == 'production' or FORCE_MEMCACHED is True:
     CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
@@ -136,8 +142,8 @@ USE_L10N = True
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.join(ROOT_PATH, 'data/www')
 MEDIA_URL = 'http://vasir.net/static/vasir/'
-ADMIN_MEDIA_PREFIX ='http://vasir.net/static/admin'
-ADMIN_MEDIA_PREFIX ='/media/'
+ADMIN_MEDIA_PREFIX ='http://vasirdev.net/static/admin/'
+#ADMIN_MEDIA_PREFIX ='/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'q1=sc-b8hqk6^8mhb6wpo8nfo#er3c!@g)2@blz6cl(23*qc8&'
