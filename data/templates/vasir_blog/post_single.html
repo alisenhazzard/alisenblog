@@ -1,5 +1,9 @@
 {% extends 'vasir_blog/blog_base.html' %}
 
+{% block head_title %}
+    {{post.title}} | 
+{% endblock head_title %}
+
 {% block content_left %}
 <div class='post_single_wrapper'>
     <div class='post_single_title'>

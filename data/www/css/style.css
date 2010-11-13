@@ -62,7 +62,7 @@ h2 {
 /* --------------------------------------
  * Pre (for code) 
  * -------------------------------------- */
-pre {
+pre, .post_inline_pre {
     background:#383838;
     border:1px solid #111111;
     color:#ffffff;
@@ -243,6 +243,7 @@ div {
     #about_page_about_wrapper {
         border-right:1px solid #dedede;
         float:left;
+        line-height:1.7em;
         margin: 0 1% 0 0;
         padding:0 2% 0 0;
         width:63%;
@@ -446,12 +447,13 @@ div {
         /* ===================================================================
          * Post Styles
          * ===================================================================*/
-        .post_guide, .post_emphasis {
+        .post_guide, .post_emphasis, .post_long_url_box, .post_pre_light {
             -moz-border-radius:5px;
             -webkit-border-radius:5px;
             border-radius:5px;
             border:1px solid #bcbcbc;
             background:#ffffff;
+            color: #2C2D32;
             font-size:.9em;
             margin:1% 0;
             padding:.2em;
@@ -462,12 +464,23 @@ div {
             font-style:italic;
             margin:0 0 1% 0;
         }
+            .post_inline_pre {
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                border-radius:5px;
+                display:inline;
+                font-size:.9em;
+                padding:2px;
+            }
             .post_foot_note a {
                 color:#909090;
             }
             .post_foot_note a:hover {
                 color:#707070;
                 text-decoration:underline;
+            }
+            .post_long_url_box {
+                overflow:scroll;
             }
         .post_side_discussion {
             border-left:5px solid #dedede;
@@ -567,6 +580,7 @@ div {
  * ======================================================================== */
 .align_right { text-align:right; }
 .center { text-align:center; }
+.center_image { display:block; text-align:center; }
 .clear { clear:both; }
 .email {
     unicode-bidi: bidi-override;

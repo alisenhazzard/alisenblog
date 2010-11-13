@@ -1,5 +1,11 @@
 {% extends 'vasir_blog/blog_base.html' %}
 
+{% block head_title %}
+    {% if filter_type %}
+        {{filter_value|capfirst}} | 
+    {% endif %}
+{% endblock head_title %}
+
 {% block content_left %}
 {% if filter_type %}
     <div class='filter_type_info'>
