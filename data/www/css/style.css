@@ -122,11 +122,14 @@ div {
 }
     #header {
         border-bottom:1px solid #617D91;
-        height:99%;
+        bottom:1%;
+        left:0;
         padding:0 1%;
-        position:relative;
-        width:100%;
+        position:absolute;
+        right:0;
+        top:0;
     }
+                        <li>
 
     /* --------------------------------------
      * Header Logo 
@@ -174,8 +177,8 @@ div {
             float:right;
             font-size:1.5em;
             font-weight:bold;
-            letter-spacing:.1em;
-            padding:0 1%;
+            letter-spacing:.18em;
+            padding:0 2%;
             margin:0 1%;
             position:relative;
         }
@@ -231,6 +234,31 @@ div {
 
     #latest_post_wrapper {
         margin:5% 0 0 0;
+    }
+    /* ========================================================================    
+     *
+     * ABOUT PAGE STYLE
+     *
+     * ======================================================================== */
+    #about_page_about_wrapper {
+        border-right:1px solid #dedede;
+        float:left;
+        margin: 0 1% 0 0;
+        padding:0 2% 0 0;
+        width:63%;
+    }
+        #about_page_about_wrapper img {
+            -moz-box-shadow:1px 2px 1px #ababab;
+            -webkit-box-shadow:1px 2px 1px #ababab;
+            box-shadow:1px 2px 1px #ababab;
+            border:2px solid #dedede;
+            float:left;
+            margin: 0 .5em 0 0;
+        }
+    #about_page_resume_wrapper {
+        float:left;
+        text-align:right;
+        width:34%;
     }
     /* ========================================================================    
      *
