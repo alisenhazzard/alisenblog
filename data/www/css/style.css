@@ -326,6 +326,10 @@ div {
             .total_post_count {
                 font-size:.9em;
             }
+            .ad_container {
+                overflow:hidden;
+                width:100%;
+            }
 
     /* ======================================================================
      * Single posts
