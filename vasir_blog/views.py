@@ -258,5 +258,8 @@ class LatestPostFeed(Feed):
     def item_title(self, item):
         return item.title
 
+    def item_link(self, item):
+        return item.get_url()
+
     def item_description(self, item):
         return item.description
