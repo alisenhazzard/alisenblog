@@ -4,6 +4,7 @@ from django.conf import settings
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+from vasir_blog.views import LatestPostFeed
 
 urlpatterns = patterns('',
     # Example:
@@ -12,7 +13,7 @@ urlpatterns = patterns('',
 
     #Feed
     url(r'^feed/$',
-        'vasir_blog.views.LatestPostFeed',
+        LatestPostFeed(),
         name='feed',
         ),
 
