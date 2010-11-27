@@ -131,7 +131,7 @@ class Post(models.Model):
     #------------------------------------
     def get_url(self):
         #Return the URL as category/post
-        return '/blog/%s/%s/' % (
+        return 'http://vasir.net/blog/%s/%s/' % (
             self.category.slug,
             self.slug)
 
