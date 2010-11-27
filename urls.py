@@ -10,6 +10,12 @@ urlpatterns = patterns('',
     (r'^blog[/]', include('vasirsite.vasir_blog.urls')),
     (r'^', include('vasirsite.vasir_site.urls')),
 
+    #Feed
+    url(r'^feed/$',
+        'vasir_blog.views.LatestPostFeed',
+        name='feed',
+        ),
+
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),

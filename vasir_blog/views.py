@@ -12,7 +12,9 @@ from vasir_site.views_util import *
 #----------------------------------------
 import math
 
+#Django imports
 from django import http
+from django.contrib.syndication.views import Feed
 """=============================================================================
 
 Functions
@@ -241,3 +243,20 @@ def get_single_post(request, kwargs):
         'post': post_object,
         'all_total_posts': all_total_posts,
     }
+
+#----------------------------------------
+#Return RSS
+#----------------------------------------
+class LatestPostFeed(Feed):
+    title = "Erik Hazzard's Latest Posts | Vasir.net"
+    link = "/feed/"
+    description = "Latest posts and tutorials from Erik Hazzard's blog, vasir.net"
+
+    def items(self):
+        return blog_models.Post.objects.order_by('-post_date')
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.description
