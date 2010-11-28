@@ -48,7 +48,10 @@ except:
 if (SITE_ENVIRONMENT == 'dev' and FORCE_MEMCACHED is False) \
     or (FORCE_DUMMY_CACHE is True):
     CACHE_BACKEND = 'dummy://'
-elif SITE_ENVIRONMENT == 'production' or FORCE_MEMCACHED is True:
+elif SITE_ENVIRONMENT == 'production':
+    CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+#Overwrite check, just in case
+if FORCE_MEMCACHED is True:
     CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 
 try:

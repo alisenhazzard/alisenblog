@@ -327,7 +327,9 @@ div {
                 font-size:.9em;
             }
             .ad_container {
+                border-top: 1px solid #cdcdcd;
                 overflow:hidden;
+                padding:1em 0 0 0;
                 width:100%;
             }
 
@@ -562,13 +564,6 @@ div {
     text-shadow: 1px 1px 0 #ffffff;
     z-index:400;
 }
-    #footer_wrapper a {
-        color:#9CB9D5;
-    }
-        #footer_wrapper a:hover {
-            color:#A28167;
-        }
-
     #footer {
         border-top:1px solid rgba(220,220,220,.8);
         _border-top:1px solid #cdcdcd;
@@ -590,6 +585,7 @@ div {
     unicode-bidi: bidi-override;
     direction:rtl;
 }
+.font_small { font-size:.9em; }
 .grey_text {
     color: #aeaeae;
     text-shadow:1px 1px 0 #ffffff;

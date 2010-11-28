@@ -23,6 +23,7 @@ from django.contrib.auth.models import User
 from django.forms.models import modelformset_factory
 from django.core.mail import EmailMessage, SMTPConnection, send_mail
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.decorators.cache import cache_page
 
 import django.db.models
 from django.conf import settings

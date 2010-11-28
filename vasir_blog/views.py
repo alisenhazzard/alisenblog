@@ -20,6 +20,9 @@ from django.contrib.syndication.views import Feed
 Functions
 
 ============================================================================="""
+#Cache all the blog pages for 6 hours since nothing will be changing much
+#   if at all
+@cache_page(60 * 60 * 6)
 @render_to('vasir_blog/blog.html')
 def blog(request, **kwargs):
     '''blog(request, **kwargs)
@@ -222,6 +225,9 @@ def get_all_categories():
 #----------------------------------------
 #Get a single post
 #----------------------------------------
+#Cache all the blog pages for 6 hours since nothing will be changing much
+#   if at all
+@cache_page(60 * 60 * 6)
 @render_to('vasir_blog/post_single.html')
 def get_single_post(request, kwargs):
     #Get single post 
