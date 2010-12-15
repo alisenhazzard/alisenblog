@@ -14,6 +14,7 @@ Functions
 """--------------------------------------
 home: renders the home page
 -----------------------------------------"""
+@cache_page(60 * 30 * 3)
 @render_to('vasir_site/home.html')
 def home(request):
     #Get the latest post
@@ -22,10 +23,19 @@ def home(request):
         'latest_post': latest_post
     }
 
+"""--------------------------------------
+openlayers_book: renders the home page
+-----------------------------------------"""
+@cache_page(60 * 60 * 3)
+@render_to('vasir_site/openlayers_book.html')
+def openlayers_book(request):
+    #Get the latest post
+    return {}
 
 """--------------------------------------
 about: renders the home page
 -----------------------------------------"""
+@cache_page(60 * 60 * 3)
 @render_to('vasir_site/about.html')
 def about(request):
     return {}
@@ -34,6 +44,7 @@ def about(request):
 """--------------------------------------
 portfolio: renders the home page
 -----------------------------------------"""
+@cache_page(60 * 60 * 3)
 @render_to('vasir_site/portfolio.html')
 def portfolio(request):
     return {}
@@ -41,6 +52,7 @@ def portfolio(request):
 """--------------------------------------
 dev: renders the home page
 -----------------------------------------"""
+@cache_page(60 * 60 * 3)
 @render_to('vasir_site/dev.html')
 def dev(request):
     return {}

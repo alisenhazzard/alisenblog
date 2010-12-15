@@ -51,6 +51,13 @@
                                 title='Blog'>Blog</a>
                         </li>
                         <li>
+                            <a href='/openlayers_book/' rel='nofollow' 
+                                {% if '/openlayers_book/' in request.path %}
+                                    class='active_link'
+                                {% endif %}
+                                title='OpenLayers Book'>Book</a>
+                        </li>
+                        <li>
                             <a href='/dev/' rel='nofollow' 
                                 {% if '/dev/' in request.path %}
                                     class='active_link'

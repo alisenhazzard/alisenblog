@@ -22,7 +22,7 @@ Functions
 ============================================================================="""
 #Cache all the blog pages for 6 hours since nothing will be changing much
 #   if at all
-@cache_page(60 * 60 * 6)
+@cache_page(60 * 60 * 3)
 @render_to('vasir_blog/blog.html')
 def blog(request, **kwargs):
     '''blog(request, **kwargs)
