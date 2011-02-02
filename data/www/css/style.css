@@ -54,7 +54,11 @@ h1 {
     text-shadow:0 2px 2px #ffffff;
 }
 h2 {
+    /*
     color:#7291AD;
+    color: #2C2D32;
+    */
+    color: #555555;
     font-size:2em;
     margin:0 0 .5% 0;
 }
