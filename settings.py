@@ -13,6 +13,7 @@ import settings_config
 -----------------------------------------------------------------------------"""
 #Debug settings.  Should never be set to True in production or staging
 DEBUG = settings_config.DEBUG
+HIDDEN_SETTINGS = True 
 TEMPLATE_DEBUG = DEBUG
 
 ENVIRONMENT_TYPES = ['dev', 'production']

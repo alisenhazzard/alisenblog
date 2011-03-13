@@ -181,9 +181,9 @@ div {
             float:right;
             font-size:1.5em;
             font-weight:bold;
-            letter-spacing:.18em;
-            padding:0 1.5%;
-            margin:0 .2%;
+            letter-spacing:.11em;
+            padding:0 1.1%;
+            margin:0 .1%;
             position:relative;
         }
             #site_nav ul li a {
@@ -192,7 +192,7 @@ div {
                 border-radius:5px;
                 color:#efefef;
                 display:block;
-                padding:4px 28px;
+                padding:4px 20px;
                 text-decoration:none;
                 text-shadow:0 2px 1px #2C2D32;
             }
