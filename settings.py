@@ -121,6 +121,14 @@ EMAIL_HOST_PASSWORD = settings_config.EMAIL_HOST_PASSWORD
 EMAIL_PORT = settings_config.EMAIL_PORT
 EMAIL_USE_TLS = settings_config.EMAIL_USE_TLS
 
+
+"""--------------------------------------------------------------------------
+    
+    Media Settings 
+
+-----------------------------------------------------------------------------"""
+MEDIA_URL = getattr(settings_config, 'MEDIA_URL', '')
+
 """--------------------------------------------------------------------------
     
     Other Django Settings
