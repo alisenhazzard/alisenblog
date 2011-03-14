@@ -13,7 +13,7 @@
  * ======================================================================== */
 body, html {
     bottom:0;
-    background:#f0f0f0 url(http://vasirsite.s3.amazonaws.com/content_bg.jpg);
+    background:#f0f0f0 url(../img/content_bg.jpg);
     color: #2C2D32;
     font-family:'Cantarell', Arial, Verdana, sans-serif; 
     font-weight:normal;
@@ -118,7 +118,7 @@ div {
     -webkit-box-shadow: 0 2px 7px #707070;
     box-shadow: 0 2px 3px #909090;
 
-    background:#e7e7e7 url(http://vasirsite.s3.amazonaws.com/header_bg.jpg);
+    background:#e7e7e7 url(../img/header_bg.jpg);
     border-bottom:1px solid #324D62;
     height: 80px;
     position:relative;
@@ -362,7 +362,7 @@ div {
             border-radius:7px;
             border:1px solid #343434;
 
-            background:#707070 url(http://vasirsite.s3.amazonaws.com/footer_bg.jpg);
+            background:#707070 url(../img/footer_bg.jpg);
             color:#efefef;
             font-size:2.0em;
             font-weight:bold;
@@ -388,7 +388,7 @@ div {
                 -webkit-border-radius:7px;
                 border-radius:7px;
                 border:1px solid #343434;
-                background:#707070 url(http://vasirsite.s3.amazonaws.com/header_bg.jpg);
+                background:#707070 url(../img/header_bg.jpg);
                 color:#f0f0f0;
                 font-weight:bold;
                 font-size:1.8em;
@@ -405,7 +405,7 @@ div {
                 -webkit-border-radius:7px;
                 border-radius:7px;
                 border:1px solid #343434;
-                background:#707070 url(http://vasirsite.s3.amazonaws.com/footer_bg.jpg);
+                background:#707070 url(../img/footer_bg.jpg);
                 color:#f0f0f0;
                 font-weight:bold;
                 font-size:1.6em;
@@ -512,7 +512,7 @@ div {
      * ====================================================================== */
         /*Filter type info, also defined above with .post_single_title*/
         .filter_type_info {
-            background:#707070 url(http://vasirsite.s3.amazonaws.com/header_bg.jpg);
+            background:#707070 url(../img/header_bg.jpg);
             margin:0 0 2% 0;
         }
 
@@ -539,14 +539,14 @@ div {
                     -webkit-border-radius:5px;
                     border-radius:5px;
                     border:1px solid #343434;
-                    background:#707070 url(http://vasirsite.s3.amazonaws.com/footer_bg.jpg);
+                    background:#707070 url(../img/footer_bg.jpg);
                     color:#f0f0f0;
                     display:block;
                     text-shadow:1px 1px 0 #232323;
                     width:98.5%;
                 }
                     .blog_post_item h2 a:hover {
-                        background:#707070 url(http://vasirsite.s3.amazonaws.com/header_bg.jpg);
+                        background:#707070 url(../img/header_bg.jpg);
                         text-decoration:none;
                         text-shadow:0px 1px 5px #232323;
                     }
