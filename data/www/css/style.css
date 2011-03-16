@@ -246,6 +246,14 @@ div {
     #latest_post_wrapper {
         margin:5% 0 0 0;
     }
+        #openlayers_book_image {
+            -moz-box-shadow:1px 2px 1px #ababab;
+            -webkit-box-shadow:1px 2px 1px #ababab;
+            box-shadow:1px 2px 1px #ababab;
+            border:2px solid #dedede;
+            float:left;
+            margin: 0 0 0 .5em;
+        }
     /* ========================================================================    
      *
      * ABOUT PAGE STYLE
