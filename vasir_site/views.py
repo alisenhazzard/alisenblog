@@ -32,6 +32,14 @@ def openlayers_book(request):
     #Get the latest post
     return {}
 
+'''OpenLayers Book Files.  Contains source code and other files 
+    for the book'''
+@cache_page(60 * 60 * 3)
+@render_to('vasir_site/openlayers_book_files.html')
+def openlayers_book_files(request):
+    #Get the latest post
+    return {}
+
 """--------------------------------------
 about: renders the home page
 -----------------------------------------"""
