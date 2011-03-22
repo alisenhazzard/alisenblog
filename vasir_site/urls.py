@@ -14,9 +14,9 @@ urlpatterns = patterns('',
         'vasir_site.views.openlayers_book',
         name='page_openlayers_book'),
 
-    url(r'^openlayers_book/files/$',
-        'vasir_site.views.openlayers_book_files',
-        name='page_openlayers_book_files'),
+    url(r'openlayers_book/files/$',
+        'vasir_site.views.openlayers_book',
+        name='page_openlayers_book'),
 
     url(r'^about/$',
         'vasir_site.views.about',
