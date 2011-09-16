@@ -38,8 +38,10 @@
     </strong>
     <br />
     <strong>Chapter 9</strong>, "Using Vector Layers", contains information on how to set up and use the vector layer.  We cover how to work with feature objects, load in data from geospatial files (e.g., GeoJSON and KML), use the Strategy classes (such as the Cluster strategy), and much more.
+
     <br /><br />
     <br /><br />
+
     <h2>Code Files</h2>
         <a href='http://s3.amazonaws.com/vasirsite/OpenLayers_Book_Sourcecode.zip'
         title='Download OpenLayers Book Source Code'>
@@ -47,5 +49,45 @@
         <span class='grey_text'><em>(.zip archive)</em></span>
     <br />
     The source code files are grouped by chapter and example.  To download the code, click the link above. 
+
+    <br /><br />
+    <br /><br />
+
+    <h2>Errata</h2>
+    Errors in the book are listed below.  If you find any errors, please email me. Thanks!
+    <br />
+    <br />
+    <div id='errata_list'>
+        <div class='blog_post_item'>
+            <strong>Page 221</strong> 
+            "var map1, map2;" shoud be "var map_1, map_2;"
+            <br />
+
+            <strong>Page 254</strong> The description of Geometry.LinearRing reads
+            "pass in an array of LineString...", but it should read "pass in an array of Points..."
+            <br />
+
+            <strong>Page 271</strong>
+            In the code, "Create a format object var format_...." should have a comment tag
+            "//Create a format object"
+            <br />
+
+            <strong>Page 272</strong> 5. should read "Put the code below after map.addLayer."
+            <br />
+
+            <strong>Page 278</strong>
+            "A symbolizer is just an an ..." should read "A symbolizer is just an ..."
+            <br />
+
+            <strong>Page 293</strong> 6. uses an incorrect variable name:
+            "feature_symbolizers_lookup);" should read "symbolizers_lookup);"
+            <br />
+
+            <strong>Page 315</strong> Typo in 4.  "extractAttribtues" -> 
+            should be "extractAttributes"
+            <br />
+        </div>
+    </div>
+
 </div>
 {% endblock site_content %}
