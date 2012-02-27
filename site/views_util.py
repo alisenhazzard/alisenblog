@@ -28,9 +28,9 @@ from django.views.decorators.cache import cache_page
 import django.db.models
 from django.conf import settings
 
-#vasir_site app imports
+#site app imports
 #========================================
-import vasir_blog.models as blog_models
+import blog.models as blog_models
 
 """==========================================================================
 

@@ -4,7 +4,7 @@ views_base_pages.py
 Handles various page renders 
 ============================================================================="""
 #Import everything from the views_util
-from vasir_site.views_util import *
+from site.views_util import *
 #Import blog_models
 #import blog_models
 
@@ -22,8 +22,8 @@ Functions
 ============================================================================="""
 #Cache all the blog pages for 6 hours since nothing will be changing much
 #   if at all
-@cache_page(60 * 60 * 3)
-@render_to('vasir_blog/blog.html')
+#@cache_page(60 * 60 * 3)
+@render_to('blog/blog.html')
 def blog(request, **kwargs):
     '''blog(request, **kwargs)
     -------------------------------------
@@ -227,8 +227,8 @@ def get_all_categories():
 #----------------------------------------
 #Cache all the blog pages for 6 hours since nothing will be changing much
 #   if at all
-@cache_page(60 * 60 * 6)
-@render_to('vasir_blog/post_single.html')
+#@cache_page(60 * 60 * 6)
+@render_to('blog/post_single.html')
 def get_single_post(request, kwargs):
     #Get single post 
     post_object = blog_models.Post.objects.get(
@@ -254,9 +254,9 @@ def get_single_post(request, kwargs):
 #Return RSS
 #----------------------------------------
 class LatestPostFeed(Feed):
-    title = "Erik Hazzard's Latest Posts | Vasir.net"
+    title = "Alisen's Latest Posts"
     link = "/feed/"
-    description = "Latest posts and tutorials from Erik Hazzard's blog, vasir.net"
+    description = "Latest posts from Alisen's blog"
 
     def items(self):
         return blog_models.Post.objects.order_by('-post_date')

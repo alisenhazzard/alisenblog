@@ -1,4 +1,4 @@
-from vasir_blog import models
+from blog import models
 from django.contrib import admin
 
 admin.site.register(models.Category)

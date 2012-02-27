@@ -23,7 +23,7 @@ SITE_ENVIRONMENT = settings_config.SITE_ENVIRONMENT
 #if SITE_ENVIRONMENT == ENVIRONMENT_TYPES[1]:
 #    DEBUG = False
 
-#Path Of vasir folder
+#Path Of alisenblog folder
 #------------
 ROOT_PATH = os.path.realpath(os.path.dirname(__file__))
 
@@ -60,47 +60,23 @@ try:
 except AttributeError:
     CACHE_MIDDLEWARE_SECONDS = 60 * 30 * 3
 
-CACHE_MIDDLEWARE_KEY_PREFIX = 'vasir'
+CACHE_MIDDLEWARE_KEY_PREFIX = 'alisenblog'
 
 """--------------------------------------------------------------------------
     
     Django Database Settings
 
 -----------------------------------------------------------------------------"""
-#See if we should force sqlite use
-try:
-    FORCE_SQLITE = settings_config.FORCE_SQLITE
-except AttributeError:
-    FORCE_SQLITE = False
-
-try:
-    FORCE_POSTGRES = settings_config.FORCE_POSTGRES
-except AttributeError:
-    FORCE_POSTGRES = False
-
-#Use local sqlite db if in dev, otherwise use postgres
-if (SITE_ENVIRONMENT == 'dev' or FORCE_SQLITE is True) and (FORCE_POSTGRES is False):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'vasir.db',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'alisen.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
-elif SITE_ENVIRONMENT == 'production' or FORCE_POSTGRES is True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'vasir',
-            'USER': 'postgres',
-            'PASSWORD': settings_config.PRODUCTION_PASSWORD,
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+}
 
 try:
     ADMINS =  settings_config.ADMINS
@@ -153,8 +129,8 @@ USE_L10N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = os.path.join(ROOT_PATH, 'data/www')
-MEDIA_URL = 'http://vasir.net/static/vasir/'
-ADMIN_MEDIA_PREFIX ='http://vasirdev.net/static/admin/'
+MEDIA_URL = 'http://alisenpaige.net/static/alisen/'
+ADMIN_MEDIA_PREFIX ='http://alisenpaige.net/static/alisen/'
 #ADMIN_MEDIA_PREFIX ='/media/'
 
 # Make this unique, and don't share it with anybody.
@@ -202,7 +178,7 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
 #Location of urls.py
-ROOT_URLCONF = 'vasirsite.urls'
+ROOT_URLCONF = 'alisenblog.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, "data/templates"),
@@ -219,6 +195,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'vasirsite.vasir_blog',
-    'vasirsite.vasir_site',
+    'alisenblog.blog',
+    'alisenblog.site',
 )

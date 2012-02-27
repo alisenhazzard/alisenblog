@@ -11,13 +11,13 @@ urlpatterns = patterns('',
     #===========================================================================
     #Root blog page
     url(r'^$',
-        'vasir_blog.views.blog',
+        'blog.views.blog',
         name='blog',
         ),
     
     #Specific blog page
     url(r'^page/(?P<current_page>\d{1,3})/$',
-        'vasir_blog.views.blog',
+        'blog.views.blog',
         ),
 
     #url(r'^page/(?P<current_page>\d{1,3})$',
@@ -26,7 +26,7 @@ urlpatterns = patterns('',
 
     #Get a single blog post
     url(r'^(?P<category>[^/]+)/(?P<filter_value>[^/]+)[/]$',
-        'vasir_blog.views.blog',
+        'blog.views.blog',
         {
         'query_type': 'single',
         }),
@@ -36,7 +36,7 @@ urlpatterns = patterns('',
     #===========================================================================
     #Get posts by category
     url(r'^(?P<filter_value>[^/]+)[/]$',
-        'vasir_blog.views.blog',
+        'blog.views.blog',
         {
         'filter_type': 'category',
         'filter_col': 'slug',
@@ -47,7 +47,7 @@ urlpatterns = patterns('',
     #===========================================================================
     #Get a list of blog posts by tag
     url(r'^by/tag/(?P<filter_value>[^/]+)[/]$',
-        'vasir_blog.views.blog',
+        'blog.views.blog',
         {
         'query_type': 'tag',
         'filter_type': 'tags',
